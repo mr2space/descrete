@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+void setMultiplication(int arr1[], int len1, int arr2[], int len2) ;
 int inputSet(int *arr);
 int dublicateCheck(int arr[],int len,int ele);
 int unionOp(int arr1[],int len1,int arr2[],int len2,int *result);
@@ -27,6 +28,8 @@ int main(){
     unionOp(set1,num1,set2,num2,result);
     intersectionOp(set1,num1,set2,num2,result);
     subtraction(set1,num1,set2,num2,result);
+    printf("calling: \n");
+    setMultiplication(set1, num1, set2, num2);
 
     return 0;
 }
@@ -73,7 +76,6 @@ int unionOp(int arr1[],int len1,int arr2[],int len2,int *result){
     printf("\n");
 }
 
-
 int intersectionOp(int arr1[],int len1,int arr2[],int len2,int *result){
     int pos = 0,i=0;
     for(pos = 0;pos < len2;pos++){
@@ -105,3 +107,20 @@ int subtraction(int arr1[],int len1,int arr2[],int len2,int *result){
     }
     printf("\n");
 }
+
+void setMultiplication(int arr1[], int len1, int arr2[], int len2){
+    int result[300][2];
+    int i, j,pos=0;
+    for(i=0;i<len1;i++){
+        for(j=0;j<len2;j++){
+            result[pos][0] = *(arr1 + i);
+            result[pos][1] = *(arr2 + j);
+            pos++;
+        }
+    }
+    printf("cardinality of set A and B \n");
+    for(i=0;i<pos;i++){
+        printf(" (%d, %d)", result[i][0], result[i][1]);
+    }
+    printf("\n");
+    }
