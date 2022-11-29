@@ -44,8 +44,8 @@ int main()
     printf("Enter the size: ");
     scanf("%d",&size);
     struct graph g[size];
-    graphArrayInput(g,3);
+    graphArrayInput(g,size);
     printf(" \n graph is --- \n");
-    graphDisplay(g,3);
+    graphDisplay(g,size);
      return 0;
 }
