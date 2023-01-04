@@ -1,9 +1,11 @@
 #include<stdio.h>
 int orGate();
 int andGate();
+int notGate();
 int main(){
     orGate();
     andGate();
+    notGate();
     return 0;
 }
 
@@ -32,3 +34,15 @@ int orGate()
         }
     }
 }
+
+int notGate(){
+    
+    int a;
+    printf("Truth table of NOT \n");
+    printf(" A | not A \n");
+    for (b = 0; b < 2; b++)
+        {
+            printf("  %d | %d \n", a, 1-a);
+        }
+}
+    
